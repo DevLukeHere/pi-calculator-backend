@@ -1,20 +1,19 @@
-const express = require('express')
-const Pi = require('../models/piModel')
-const router = express.Router()
+const express = require("express");
+const {
+  createPiValue,
+  getPiValues,
+  getPiValue,
+  updatePiValue,
+} = require("../controllers/piController");
+const router = express.Router();
 
 // GET pi value
-router.get('/', (req, res) => {
-  res.json({message: 'GET pi value'})
-})
+router.get("/", getPiValues);
 
 // POST pi value
-router.post('/', (req, res) => {
-  res.json({message: 'POST pi value'})
-})
+router.post("/:id", createPiValue);
 
 // UPDATE pi value
-router.patch('/', (req, res) => {
-  res.json({message: 'UPDATE pi value'})
-})
+router.patch("/:id", updatePiValue);
 
-module.exports = router
+module.exports = router;
