@@ -1,5 +1,5 @@
 const express = require('express')
-const modelPi = require('../models/modelPi')
+const Pi = require('../models/piModel')
 const router = express.Router()
 
 // GET pi value
