@@ -45,10 +45,26 @@ const updatePiValue = async (req, res) => {
     return res.status(404).json({ error: "No such value" });
   }
 
+  let total = 0;
+  let final = 0;
+  let precision = req.body.precision + 1;
+
+  // Algorithm to calculate the value of Pi
+  for (let n = 0; n < 1000; n++) {
+    let numerator = Math.pow(-1, n);
+    let denominator = 2 * n + 1;
+
+    total += numerator / denominator;
+  }
+
+  final = parseFloat((4 * total).toFixed(precision));
+
   const pi = await Pi.findOneAndUpdate(
     { _id: id },
     {
       ...req.body,
+      precision: precision,
+      pi: final,
     }
   );
 

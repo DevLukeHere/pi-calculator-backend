@@ -7,7 +7,12 @@ const piSchema = new Schema(
     pi: {
       type: Number,
       required: true,
-      // default: 3
+      default: 3,
+    },
+    precision: {
+      type: Number,
+      required: true,
+      default: 1,
     },
   },
   { timestamps: true }
