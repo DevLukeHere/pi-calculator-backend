@@ -59,20 +59,18 @@ const updatePiValue = async (req, res) => {
 
   final = parseFloat((4 * total).toFixed(precision));
 
-  const pi = await Pi.findOneAndUpdate(
-    { _id: id },
-    {
-      ...req.body,
-      precision: precision,
-      pi: final,
-    }
-  );
+  const pi = await Pi.findOneAndUpdate({
+    _id: id,
+    ...req.body,
+    precision: precision,
+    pi: final,
+  });
 
   if (!pi) {
     return res.status(400).json({ error: "No such value" });
   }
 
-  res.status(200).json(pi);
+  res.status(200).json({ _id: id, precision: precision, pi: final });
 };
 
 module.exports = { createPiValue, getPiValues, getPiValue, updatePiValue };
