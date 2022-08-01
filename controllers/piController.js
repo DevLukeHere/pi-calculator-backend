@@ -44,4 +44,4 @@ const updatePiValue = async (req, res) => {
   res.status(200).json({ _id: id, precision: precision, pi: final });
 };
 
-module.exports = { createPiValue, getPiValues, getPiValue, updatePiValue };
+module.exports = { getPiValues, updatePiValue };
