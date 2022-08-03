@@ -10,11 +10,9 @@ To run the project locally on your machine please follow these steps:
 
 4. Run "npm install --global nodemon" to install nodemon. 
 
-5. Run "npm run dev" which runs the app in development mode. Make sure to run it on port 3001.
+5. Run "npm run dev" which runs the app in development mode. Ensure that it is running on port 3001.
 
-6. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-7. Ensure that the message "connected to db and listening on port 3001" is displayed in the terminal.
+6. Ensure that the message "connected to db and listening on port 3001" is displayed in the terminal.
 
 ## Application Improvements
 
