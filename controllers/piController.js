@@ -20,8 +20,8 @@ const updatePiValue = async (req, res) => {
   let final = 0;
   let precision = req.body.precision + 1;
 
-  // algorithm to calculate the value of Pi
-  for (let n = 0; n < 1000; n++) {
+  // algorithm to calculate the value of Pi using the Gregory-Liebniz series
+  for (let n = 0; n < 1000000; n++) {
     let numerator = Math.pow(-1, n);
     let denominator = 2 * n + 1;
 
